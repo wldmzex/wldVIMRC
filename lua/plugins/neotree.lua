@@ -11,6 +11,7 @@ return {
       end,
       desc = "Explorer NeoTree (Root Dir)",
     },
+    { "<leader>t", "<cmd>Neotree<cr>", desc = "Find Files" },
   },
   opts = function(_, opts)
     opts.filesystem = vim.tbl_deep_extend("force", opts.filesystem, {
@@ -21,5 +22,8 @@ return {
       },
       --vim.cmd("noremap u <Up>")
     })
+    opts.window.mappings = {
+      ["e"] = { "", nowait = true },
+    }
   end,
 }
