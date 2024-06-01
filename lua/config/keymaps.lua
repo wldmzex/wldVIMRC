@@ -42,8 +42,11 @@ map(
   "':!make -C ../..<CR>:!make download -C ../..<CR>'",
   { desc = "", expr = true, silent = false, remap = true }
 )
-map({ "n", "x" }, "n", "'a'", { desc = "Right", expr = true, silent = true, remap = true })
-map({ "n", "x" }, "N", "'A'", { desc = "Right", expr = true, silent = true, remap = true })
+map({ "n", "x" }, "n", "'a'", { desc = "append", expr = true, silent = true, remap = true })
+map({ "n", "x" }, "N", "'A'", { desc = "append line", expr = true, silent = true, remap = true })
+map({ "n", "x" }, "<c-e>", "'n'", { desc = "search next", expr = true, silent = true, remap = true })
+map({ "n", "x" }, "<c-u>", "'N'", { desc = "search prev", expr = true, silent = true, remap = true })
+map({ "n", "x" }, "<c-n>", "':nohlsearch<CR>'", { desc = "nohlserach", expr = true, silent = true, remap = true })
 map({ "n" }, "<space>e", "'<C-w>k'", { desc = "", expr = true, silent = false, remap = true })
 map({ "n" }, "<space>d", "':bdelete<CR>'", { desc = "close current tab", expr = true, silent = true, remap = true })
 map({ "n" }, "<space>u", "'<C-w>l'", { desc = "", expr = true, silent = false, remap = true })
