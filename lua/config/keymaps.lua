@@ -39,7 +39,7 @@ map(
 map(
   { "n" },
   "<space>h",
-  "':!make -C ../..<CR>:!make download -C ../..<CR>'",
+  "':!bear -- make <CR>:!make download <CR>'",
   { desc = "", expr = true, silent = false, remap = true }
 )
 map({ "n", "x" }, "n", "'a'", { desc = "append", expr = true, silent = true, remap = true })
@@ -67,7 +67,8 @@ vim.cmd("imap <c-n> <enter>")
 vim.cmd("imap <C-e> (")
 vim.cmd("imap <c-i> {")
 vim.cmd("imap <c-o> ;")
-vim.cmd("map <M-u> k")
-vim.cmd("map <M-U> 10k")
-vim.cmd("map <M-e> j")
-vim.cmd("map <M-E> 10j")
+vim.cmd("noremap <M-u> k")
+vim.cmd("noremap <M-U> 10k")
+vim.cmd("noremap <M-e> j")
+vim.cmd("noremap <M-E> 10j")
+vim.cmd("noremap k w")
