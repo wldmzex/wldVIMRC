@@ -39,7 +39,14 @@ map(
 map(
   { "n" },
   "<space>h",
-  "':!bear -- make <CR>:!make download <CR>'",
+  "':make <CR>:!make download <CR>'",
+  { desc = "make and download", expr = true, silent = false, remap = true }
+)
+map({ "n" }, "<space>R", "':make reset<CR>'", { desc = "reset mcu", expr = true, silent = false, remap = true })
+map(
+  { "n" },
+  "<space>p",
+  "':!idf.py build <CR>:!idf.py -p /dev/ttyUSB0 flash <CR>'",
   { desc = "", expr = true, silent = false, remap = true }
 )
 map({ "n", "x" }, "n", "'a'", { desc = "append", expr = true, silent = true, remap = true })
@@ -58,6 +65,7 @@ map({ "n", "x" }, "l", "'<C-r>'", { desc = "redo", expr = true, silent = false, 
 map({ "x" }, "<c-c>", "'\"+y'", { desc = "", expr = true, silent = false, remap = true })
 map({ "n" }, "<c-v>", "'\"+p'", { desc = "", expr = true, silent = false, remap = true })
 map({ "n", "x", "o" }, "t", "'d'", { desc = "Right", expr = true, silent = true, remap = true })
+map({ "n" }, "<c-k>", '"', { desc = "", expr = true, silent = false, remap = true })
 vim.cmd("imap <c-a> <Left>")
 vim.cmd("imap <c-r> <Down>")
 vim.cmd("imap <c-s> <Right>")
@@ -67,6 +75,7 @@ vim.cmd("imap <c-n> <enter>")
 vim.cmd("imap <C-e> (")
 vim.cmd("imap <c-i> {")
 vim.cmd("imap <c-o> ;")
+vim.cmd("imap <c-f> _")
 vim.cmd("noremap <M-u> k")
 vim.cmd("noremap <M-U> 10k")
 vim.cmd("noremap <M-e> j")
